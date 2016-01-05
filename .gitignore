@@ -1,4 +1,8 @@
 # Logs
+<<<<<<< HEAD
+=======
+
+>>>>>>> 07d7a7494171c88cf94db256f41b603479556007
 logs
 *.log
 
@@ -29,5 +33,9 @@ node_modules
 # Debug log from npm
 npm-debug.log
 
+<<<<<<< HEAD
 # Environment Variables
+=======
+# Environmental Variables
+>>>>>>> 07d7a7494171c88cf94db256f41b603479556007
 *.env
