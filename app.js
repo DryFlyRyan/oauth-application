@@ -30,9 +30,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', routes);
-// app.use('/users', users);
-
 passport.use(new LinkedInStrategy({
   clientID: process.env.LINKEDIN_CLIENT_ID,
   clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
@@ -56,6 +53,10 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
   done(null, user);
 });
+
+// Routes
+app.use('/', routes);
+app.use('/users', users);
 
 app.get('/auth/linkedin',
   passport.authenticate('linkedin', { state: 'SOME STATE'  }),
